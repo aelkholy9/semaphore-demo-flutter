@@ -11,3 +11,17 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands: []
+  - name: Tests
+    dependencies:
+      - 'Block #1'
+    task:
+      prologue:
+        commands:
+          - checkout
+      jobs:
+        - name: Unit tests
+          commands:
+            - echo 'Running unit tests'
+        - name: Integration tests
+          commands:
+            - echo 'Running integration tests'
